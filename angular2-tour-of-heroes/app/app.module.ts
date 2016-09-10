@@ -5,17 +5,17 @@ import { HttpModule }           from '@angular/http';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './shared/in-memory-data.service';
 
 import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
-import { HeroSearchComponent }  from './hero-search.component';
-import { HeroDetailComponent }  from './hero-detail.component';
-import { HeroService }          from './hero.service';
+import { DashboardComponent }   from './dashboard/dashboard.component';
+import { HeroListComponent }    from './heroes/hero-list/hero-list.component';
+import { HeroSearchComponent }  from './heroes/hero-search/hero-search.component';
+import { HeroDetailComponent }  from './heroes/hero-detail/hero-detail.component';
+import { HeroService }          from './heroes/shared/hero.service';
 import { routing }              from './app.routing';
 
-import './rxjs-extensions';
+import './shared/rxjs-extensions';
 
 @NgModule({
   imports: [
@@ -29,7 +29,7 @@ import './rxjs-extensions';
     AppComponent,
     DashboardComponent,
     HeroDetailComponent,
-    HeroesComponent,
+    HeroListComponent,
     HeroSearchComponent
   ],
   providers: [

@@ -10,17 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_service_1 = require('./hero.service');
-var HeroesComponent = (function () {
-    function HeroesComponent(router, heroService) {
+var hero_service_1 = require('../shared/hero.service');
+var HeroListComponent = (function () {
+    function HeroListComponent(router, heroService) {
         this.router = router;
         this.heroService = heroService;
     }
-    HeroesComponent.prototype.getHeroes = function () {
+    HeroListComponent.prototype.getHeroes = function () {
         var _this = this;
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
-    HeroesComponent.prototype.add = function (name) {
+    HeroListComponent.prototype.add = function (name) {
         var _this = this;
         name = name.trim();
         if (!name) {
@@ -32,7 +32,7 @@ var HeroesComponent = (function () {
             _this.selectedHero = null;
         });
     };
-    HeroesComponent.prototype.delete = function (hero) {
+    HeroListComponent.prototype.delete = function (hero) {
         var _this = this;
         this.heroService
             .delete(hero.id)
@@ -43,25 +43,25 @@ var HeroesComponent = (function () {
             }
         });
     };
-    HeroesComponent.prototype.ngOnInit = function () {
+    HeroListComponent.prototype.ngOnInit = function () {
         this.getHeroes();
     };
-    HeroesComponent.prototype.onSelect = function (hero) {
+    HeroListComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
-    HeroesComponent.prototype.gotoDetail = function () {
+    HeroListComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedHero.id]);
     };
-    HeroesComponent = __decorate([
+    HeroListComponent = __decorate([
         core_1.Component({
             selector: 'my-heroes',
-            templateUrl: 'app/heroes.component.html',
-            styleUrls: ['app/heroes.component.css'],
+            templateUrl: 'app/heroes/hero-list/hero-list.component.html',
+            styleUrls: ['app/heroes/hero-list/hero-list.component.css'],
             providers: [hero_service_1.HeroService]
         }), 
         __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
-    ], HeroesComponent);
-    return HeroesComponent;
+    ], HeroListComponent);
+    return HeroListComponent;
 }());
-exports.HeroesComponent = HeroesComponent;
-//# sourceMappingURL=heroes.component.js.map
+exports.HeroListComponent = HeroListComponent;
+//# sourceMappingURL=hero-list.component.js.map

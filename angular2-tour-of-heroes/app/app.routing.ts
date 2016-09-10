@@ -1,9 +1,9 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
+import { DashboardComponent }   from './dashboard/dashboard.component';
+import { HeroListComponent }      from './heroes/hero-list/hero-list.component';
+import { HeroDetailComponent }  from './heroes/hero-detail/hero-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'heroes',
-    component: HeroesComponent
+    component: HeroListComponent
   },
   {
   	path: 'detail/:id',
